@@ -19,7 +19,7 @@ class DataIngestion:
     def initia_data_ingestion(self):
         logging.info('Entered the data ingestion method or component')
         try:
-            df=pd.read_csv('src/components/notebook/data/stud.csv')
+            df=pd.read_csv('src\components\notebook\data\stud.csv')
             logging.info('Read the dataset as dataframe')
             
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
@@ -41,8 +41,8 @@ class DataIngestion:
             )
             
         except Exception as e:
-            pass CustomException(e,sys)
+            raise CustomException(e,sys)
         
-if__name__ == "__main__":
+if __name__ == "__main__":  
     obj=DataIngestion()
     obj.initiate_data_ingestion()
